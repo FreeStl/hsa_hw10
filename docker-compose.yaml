@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: db
+    ports:
+      - '5432:5432'
+
+  percona:
+    image: percona
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - '3306:3306'
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 8080:8080
